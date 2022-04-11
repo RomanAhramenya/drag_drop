@@ -1,0 +1,55 @@
+.wraper{
+    .wraper_tittle{
+        width: 50%;
+        margin: 0 auto;
+       text-align: center;
+       margin-bottom: 1.5rem;
+       padding-bottom: 1.5rem;
+       border-bottom: 1px solid grey;
+       h4{
+           font-size: 1.5rem;
+           letter-spacing: 0.1rem;
+       }
+       input{
+           padding: 5px;
+           font-size: 18px;
+       }
+    }
+    .cards{
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+       
+    }
+    .card{
+        float: left;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        border:1px dotted rgb(128, 128, 128);
+        padding:0 1rem;
+        background:gray;
+        border-radius:10px;
+       
+        
+        h5{
+            letter-spacing: 0.1rem;
+            
+            padding: 0.1rem 0.8rem;
+            background:rgba(25, 25, 63, 0.685);
+            color:white;
+            
+            border-radius:10px
+        }
+        input{
+            padding: 5px;
+        }
+        div{
+            padding: 5px;
+            background:rgba(25, 25, 63, 0.685);
+            color:white;
+            margin: 0.5rem;
+            border-radius: 10px
+        }
+    }
+
+}

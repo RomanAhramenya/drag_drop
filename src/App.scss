@@ -1,3 +1,88 @@
 .App{
-    padding: 30px;
+    margin: 0 auto;
+    header{
+        margin: 10px auto;
+        text-align: center;
+        
+        background: rgb(3, 29, 114);
+        width: 100px;
+        border-radius: 10px;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: all 0.2s;
+        a{  
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+        }
+        &:hover{
+            opacity: 1;
+        }
+    }
 }
+
+.trash {
+    background-color: black;
+    padding: 2rem;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    color: white;
+    box-shadow: 10px 10px 10px  black;
+   
+    &::before {
+        content: "";
+        width: 8.7rem;
+        height: 3.2rem;
+        top: -2.7rem;
+        box-shadow:inset 0px 7px 13px 4px #777575, 20px 19px 22px 12px #000000;
+        
+        left: 0;
+        position: absolute;
+        background-color: rgb(0, 0, 0);
+        transform: rotateX(-49deg) rotateY(18deg) rotateZ(19deg);
+        transition: all 0.2s;
+    }
+    
+    &::after {
+        content: "";
+        width: 8.5rem;
+        height: 3.2rem;
+        top: -3.1rem;
+        box-shadow: 10px 10px 10px black;
+        left: 0;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.829);
+        transform: rotateX(-49deg) rotateY(18deg) rotateZ(19deg);
+        transition: all 0.2s;
+       
+    }
+    &:hover::after{
+        left:-100px
+    }
+  }
+  .dragOver,.dragDrop{
+    &::after {
+        content: "";
+        width: 8.5rem;
+        height: 3.2rem;
+        top: -3.1rem;
+        box-shadow: 10px 10px 10px black;
+        left: -100px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.829);
+        transform: rotateX(-49deg) rotateY(18deg) rotateZ(19deg);
+        transition: all 0.2s;
+       
+    }
+}
+    .drag{
+      opacity: 0;
+    }
+   
+    .dragEnd{
+        opacity: 1;
+    }

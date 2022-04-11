@@ -1,32 +1,28 @@
-import React from 'react'
-import './App.scss';
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import Layout from './component/Layout';
-import { connect } from 'react-redux';
-import DataCardPage from './component/CardPage/DataCardPage';
-import AddCardMainPage from './component/MainPage/AddCardMainPage';
+import React from "react";
+import "./App.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./component/mainPage/MainPage";
+import { useSelector } from "react-redux";
+import Layout from "./component/Layout";
+import CardsPage from "./component/cardsPage/CardsPage";
 
-function App({data}) {
-   
+function App() {
+  const mainPageData = useSelector((state) => state.mainPage.mainPage);
+
   return (
     <BrowserRouter>
-    
       <Routes>
-          <Route path='/' element={<Layout/>}>
-            <Route index element={<AddCardMainPage/>}/>
-            {Object.keys(data).map((item,index)=>{
-              return <Route key={index} path={`/${index}`} element={<DataCardPage  text={item}/>}/>
-            })}
-          </Route>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainPage />} />
+          {Object.keys(mainPageData).map((item, index) => {
+            return (
+              <Route key={index} path={`/${index}`} element={<CardsPage />} />
+            );
+          })}
+        </Route>
       </Routes>
-     
-    
-   
     </BrowserRouter>
-    
   );
 }
-let mapStateToProps = (state) => ({
-  data:state.dataCard.ListCard
-})
-export default connect(mapStateToProps,)(App);
+
+export default App;
