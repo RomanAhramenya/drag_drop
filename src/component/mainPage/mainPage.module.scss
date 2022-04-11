@@ -1,0 +1,72 @@
+.wraper {
+  background: rgba(128, 128, 128, 0.274);
+//   .dragStart{
+//       color:#000000;
+//   }
+//   .dragEnd{
+//     color:#ebe4e4;
+// }
+// .dragLeave{
+//     color:#26f501;
+// }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+  }
+
+  .card {
+    float: left;
+    padding: 30px;
+    background: rgb(0, 198, 248);
+    margin: 10px;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: all 0.2s;
+    position: relative;
+    animation: card 0.2s linear;
+    box-shadow: none;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 2px 2px 2px blue;
+    }
+  }
+
+  .feield {
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    input {
+      border: none;
+      padding: 10px;
+      font-size: 20px;
+    }
+    button {
+      background: rgb(3, 29, 114);
+      opacity: 0.8;
+      cursor: pointer;
+      border: none;
+      padding: 10px;
+      font-size: 20px;
+      color: white;
+      transition: all 0.2s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes card {
+  0% {
+    opacity: 0;
+    bottom: -100px;
+  }
+  100% {
+    opacity: 0.5;
+    bottom: 0;
+  }
+}
